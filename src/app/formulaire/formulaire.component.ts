@@ -28,8 +28,9 @@ export class FormulaireComponent implements OnInit {
   }
 
   submit() {
-    // console.log(this.date1Value);
-    // console.log(this.date2Value);
+    console.log(this.date1Value);
+    console.log(this.date2Value);
+
     console.log(this.formulaireTest.value);
   }
 }

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Calendar } from 'primeng/calendar';
 
 @Component({
   selector: 'app-calendar-common',
@@ -7,6 +8,12 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./calendar-common.component.css']
 })
 export class CalendarCommonComponent implements OnInit {
+
+  @Input()
+  myModel!: Date;
+
+  @Output()
+  myModelChange: EventEmitter<Date> = new EventEmitter<Date>();
 
   @Input()
   public myPlaceholder!: string;
@@ -22,4 +29,7 @@ export class CalendarCommonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  callChange() {
+    this.myModelChange.emit(this.myModel);
+  }
 }

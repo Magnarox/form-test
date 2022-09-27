@@ -1,8 +1,9 @@
-<div class="form-group" [formGroup]="formulaireTest">
-  <input class="form-control" type="text" formControlName="input1" />
+<div [formGroup]="formulaireTest">
+  <input class="p-inputtext" type="text" formControlName="input1" />
   <p-calendar formControlName="date1" [(ngModel)]="date1Value" dateFormat="dd/mm/yy" [placeholder]="placeHolder1">
   </p-calendar>
-  <app-calendar-common [myFormGroup]="formulaireTest" [myControlName]="'date2'" [myPlaceholder]="placeHolder2">
+  <app-calendar-common [(myModel)]="date2Value" [myFormGroup]="formulaireTest" [myControlName]="'date2'"
+    [myPlaceholder]="placeHolder2">
   </app-calendar-common>
   <button class="p-button" (click)="submit()">Submit</button>
 </div>
