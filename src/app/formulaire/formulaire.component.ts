@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DropdownItem } from 'primeng/dropdown';
 
 @Component({
   selector: 'app-formulaire',
@@ -21,6 +22,7 @@ export class FormulaireComponent implements OnInit {
   public placeHolder2 = 'date2';
 
   constructor() {
+    this.optionList = [];
   }
 
   ngOnInit(): void {
@@ -33,4 +35,28 @@ export class FormulaireComponent implements OnInit {
 
     console.log(this.formulaireTest.value);
   }
+
+  public showModal:boolean = false;
+  public optionList: string[];
+
+  openModal1() {
+    this.optionList = [];
+    this.optionList.push('OPTION_2');
+    this.showModal = true;
+  }
+
+  openModal2() {
+    this.optionList = [];
+    this.optionList.push('OPTION_1');
+    this.optionList.push('OPTION_2');
+    this.showModal = true;
+  }
+
+  onDialogClose(event: any) {
+    this.showModal = false;
+
+    if(event) {
+      console.log(JSON.stringify(event));
+    }
+ }
 }

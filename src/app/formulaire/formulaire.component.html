@@ -6,4 +6,8 @@
     [myPlaceholder]="placeHolder2">
   </app-calendar-common>
   <button class="p-button" (click)="submit()">Submit</button>
+  <p></p>
+  <button class="p-button" (click)="openModal1()">Open Modal ONE</button>
+  <button class="p-button" (click)="openModal2()">Open Modal TWO</button>
+  <app-generic-modal [display]="showModal" (displayChange)="onDialogClose($event)" [optionList]="optionList"></app-generic-modal>
 </div>
